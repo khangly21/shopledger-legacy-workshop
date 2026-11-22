@@ -1,8 +1,8 @@
 module.exports = {
   port: process.env.PORT || 3000,
 
-  // used by /api/admin/export and /api/admin/reset
-  adminKey: 'shopledger-admin-2021',
+  // Keep admin export disabled unless a key is configured, including locally.
+  adminKey: (process.env.ADMIN_KEY || '').trim() || null,
 
   shop: {
     name: 'Corner Shop Kirana & Wholesale',
